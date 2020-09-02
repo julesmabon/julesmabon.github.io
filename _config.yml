@@ -1,9 +1,9 @@
-title:              Clean Blog
+title:              Jules Mabon
 email:              
-description:        A Blog Theme by Start Bootstrap
-author:             Start Bootstrap
+description:        Homepage of Jules Mabon
+author:             Jules Mabon
 baseurl:            ""
-url:                "https://startbootstrap.github.io"
+url:                "https://julesmabon.com"
 
 # Social Profiles
 twitter_username:   jul_mab
@@ -13,7 +13,7 @@ instagram_username:
 linkedin_username: jules-mabon-6b610b150
 
 # Add your google-analytics ID here to activate google analytics
-# google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+google_analytics:   UA-177060768-1 # out your google-analytics code
 
 # Build settings
 markdown:           kramdown
