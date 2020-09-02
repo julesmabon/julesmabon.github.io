@@ -1,0 +1,9 @@
+---
+layout: post
+title:  "Welcome !"
+date:   2020-09-02 14:32:11 +0200
+categories: jekyll update
+---
+
+This website is a work in progress, some content might be added in the near future. In the mean time please stare silently into the void of this page.
+
