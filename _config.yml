@@ -17,12 +17,24 @@ google_analytics:   UA-177060768-1 # out your google-analytics code
 
 # Build settings
 markdown:           kramdown
-paginate:           5
-paginate_path:      "/posts/page:num/"
+
 plugins:
   - jekyll-feed
   - jekyll-paginate
+  - jekyll-paginate-multiple
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+
+
+paginate:           5
+paginate_path:      "/posts/page:num/"
+
+paginate_multiple:
+  - paginate: 5
+    paginate_path: "/posts/page:num/"
+    sub_dir: '/research'
+  - paginate: 5
+    paginate_path: '/crea/page:num/'
+    sub_dir: '/crea'
 
 scholar:
   style: apa
