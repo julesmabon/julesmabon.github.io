@@ -31,7 +31,8 @@ layout: default
 
         <!-- Home Post List -->
         {% for post in site.posts limit : 5 %}
-
+        {% if post.hidden %}
+        {% else %}
         <article class="post-preview">
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
             <h2 class="post-title">{{ post.title }}</h2>
@@ -53,7 +54,7 @@ layout: default
         </article>
 
         <hr>
-
+        {% endif %}
         {% endfor %}
 
         <!-- Pager -->
