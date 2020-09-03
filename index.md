@@ -1,6 +1,6 @@
 ---
 layout: home
-background: '/img/verdon.jpg'
+background: '/img/kaleidoscop.PNG'
 ---
 
 About

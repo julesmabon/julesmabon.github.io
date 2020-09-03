@@ -1,7 +1,7 @@
 ---
 title: CV
 layout: page
-background: '/img/sea-1.jpg'
+background: '/img/verdon.jpg'
 ---
 
 <object data="media/CV.pdf" type="application/pdf" width="800px" height="1200px">
