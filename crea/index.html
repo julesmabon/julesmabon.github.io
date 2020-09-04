@@ -12,20 +12,29 @@ background: '/img/tuktuk.gif'
     <figcaption>one frame of a thing</figcaption>
     </center>
 </figure>
+-->
+<p>
+This page presents the most recent and big enough projects, you can checkout my lastest or older things on <a href="https://ogjee.artstation.com">artstation</a> or <a href="https://twitter.com/jul_mab">twitter</a>
+</p>
 
-Until this page is updated you can checkout my lastest things on [artstation](https://ogjee.artstation.com) or [twitter](https://twitter.com/jul_mab)
- -->
+ 
 {% for post in paginator.posts %}
 
 <article class="post-preview">
+
   <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
     <h2 class="post-title">{{ post.title }}</h2>
+    <img src="{{ post.thumbnail }}" style="width:100%"/>
+
     {% if post.subtitle %}
     <h3 class="post-subtitle">{{ post.subtitle }}</h3>
     {% else %}
     <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
     {% endif %}
   </a>
+
+  
+
   <p class="post-meta">Posted by
     {% if post.author %}
     {{ post.author }}
