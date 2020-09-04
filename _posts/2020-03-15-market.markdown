@@ -5,6 +5,7 @@ date:   2020-03-15 16:00:00 +0200
 categories : creative
 thumbnail: /img/market.png
 background: /img/market.png
+hidden : true
 ---
 
 This project is a first serious try at camera tracking and filming people on green screen. This was a great way to learn all kind of tricks from filming to 3d modeling.

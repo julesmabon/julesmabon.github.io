@@ -18,8 +18,9 @@ This page presents the most recent and big enough projects, you can checkout my 
 </p>
 
  
-{% for post in paginator.posts %}
+{% for post in site.posts %}
 
+{% if post.categories contains "creative"%}
 <article class="post-preview">
 
   <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
@@ -47,6 +48,7 @@ This page presents the most recent and big enough projects, you can checkout my 
 
 <hr>
 
+{% endif %}
 {% endfor %}
 
 <!-- Pager -->
