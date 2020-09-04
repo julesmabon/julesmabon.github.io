@@ -275,7 +275,7 @@ DEPENDENCIES
   jekyll (= 3.9.0)
   jekyll-feed (~> 0.6)
   jekyll-paginate (~> 1.1.0)
-  jekyll-paginate-multiple
+  jekyll-paginate-multiple (~> 0.1.0)
   jekyll-scholar
   jekyll-sitemap
   kramdown-parser-gfm
