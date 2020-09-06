@@ -4,7 +4,8 @@ title: Posts
 background: '/img/cells.png'
 ---
 
-{% for post in paginator.posts %}
+{% assign relevant = site.posts | where:"categories","research" %}
+{% for post in relevant %}
 
 <article class="post-preview">
   <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">

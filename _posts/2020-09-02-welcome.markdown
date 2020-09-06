@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Welcome !"
+categories: research
 date:   2020-09-02 14:32:11 +0200
 ---
 

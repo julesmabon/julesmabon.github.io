@@ -30,9 +30,9 @@ layout: default
         {{ content }}
 
         <!-- Home Post List -->
-        {% for post in site.posts limit : 5 %}
-        {% if post.hidden or post.categories contains "creative"%}
-        {% else %}
+        {% assign relevant = site.posts | where_exp:"item","item.categories == 'research' and item.hidden == false"%}
+        
+        {% for post in relevant limit : 5 %}
         <article class="post-preview">
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
             <h2 class="post-title">{{ post.title }}</h2>
@@ -54,7 +54,6 @@ layout: default
         </article>
 
         <hr>
-        {% endif %}
         {% endfor %}
 
         <!-- Pager -->
