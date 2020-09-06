@@ -30,9 +30,10 @@ layout: default
         {{ content }}
 
         <!-- Home Post List -->
-        {% assign relevant = site.posts | where_exp:"item","item.categories == 'research' and item.hidden == false"%}
-        
-        {% for post in relevant limit : 5 %}
+        {% assign relevant = site.posts | where: "categories","research" %}
+        {% assign relevanter = relevant | except: "hidden","true" %}
+
+        {% for post in relevanter limit : 5 %}
         <article class="post-preview">
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
             <h2 class="post-title">{{ post.title }}</h2>
