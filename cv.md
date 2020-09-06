@@ -9,14 +9,14 @@ background: '/img/verdon.jpg'
 
 ### 2020-2022
 #### PhD at INRIA Sophia-Antipolis, France
-Under the direction of Josiane Zerubia, AYANA team. On Stochastic Geometry for Multiple Object Detection and Tracking in High Resolution Multi-Source Data Sets
+Under the direction of Josiane Zerubia, [AYANA team](https://team.inria.fr/ayana/). On Stochastic Geometry for Multiple Object Detection and Tracking in High Resolution Multi-Source Data Sets
 
 _______________________________
 ### 2016-2019
-#### Master’s degree in Engineering at [Ecole Centrale de Lille]()
+#### Master’s degree in Engineering at [Ecole Centrale de Lille](https://centralelille.fr)
 Multidisciplinary engineering school, France 
 Common core : Aero/Hydrodynamics, Thermodynamics, Signal processing, Project management, Materials science etc...
-Specialization : Option DAD (Decision & Data Analysis) : Probability and statistics, optimization, machine learning ...
+Specialization : [Option DAD (Decision & Data Analysis)](http://pierrechainais.ec-lille.fr/Centrale/Option_DAD/Accueil.html) : Probability and statistics, optimization, machine learning ...
 
 _______________________________
 ### 2018-2019 
@@ -31,17 +31,17 @@ Lycée Saint Louis,Paris
 # Professional experience
 
 ### 2019 (6 months)
-#### Research internship at EMBL-EBI in Cambridge
-Final year intership in Virginie Uhlmann’s research group. Improving detection and tracking of individual Mycobacteria smegamtis in time lapse microscopy images of growing colonies, using graphical models and convolutional neural networks.
+#### Research internship at [EMBL-EBI](https://www.ebi.ac.uk) in Cambridge
+Final year intership in [Virginie Uhlmann’s research group](https://www.ebi.ac.uk/research/uhlmann). Improving detection and tracking of individual Mycobacteria smegamtis in time lapse microscopy images of growing colonies, using graphical models and convolutional neural networks.
 
 _______________________________
 ### 2018 (4 months)
-#### R&D Internship at NU!, Paris
+#### R&D Internship at [NU!](https://manger.nu), Paris
 Research, development and documentation on a product recognition system for a “connected fridge” using image processing. Experimentation on several methods from simple image differences (OpenCV) to neural networks for object recognition (Tensorflow).
 
 _______________________________
 ### 2018 
-#### Research project : in computer science with CRIsTAL
+#### Research project : in computer science with [CRIsTAL](https://www.cristal.univ-lille.fr)
 Initiation at research work on the subject of matrix factorization for recommendation systems. Study of research publications and implementation of machine learning and optimization algorithms to produce such recommendation systems such as used with Netflix or Spotify.
 
 _______________________________
