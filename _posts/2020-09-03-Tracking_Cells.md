@@ -4,6 +4,7 @@ title:  "Mycobacteria tracking on time-lapse imaging"
 subtitle: "My internship at EMBL-EBI with Virginie Uhlmann's group"
 background: '/img/cells.png'
 date:   2020-09-03 14:08:00 +0200
+categories : research
 published: true
 hidden: false
 ---
@@ -17,7 +18,7 @@ Goal
 
 My goal during this 6 months internship was to further develop techniques to track individual _Mycobacteria smegmatis_ cells in sequences of time-lapse microscopy images.
 Since these images are challenging because of division events, compact cell colonies and little prior on individual cell shapes, classical segment-then-track methods are
-ineffective. We relied on a graphical model solution to solve the tracking and segmentation problem jointly at once on the whole sequence. 
+ineffective. We relied on a graphical model solution to solve the tracking and segmentation problem jointly at once on the whole sequence. We also need to identify division events and thus build a _Mycobacteria smegmatis_ genealogical tree of some sorts.
 To build the graphical model, cell candidates must be identified in each individual image. To do so, we explored the use of several convolutional neural network models from U-net to discriminative losses for instance segmentation.
 
 ## _Mycobacteria smegmatis_
@@ -52,6 +53,8 @@ Here an input frame with fews cells can lead to multiple hypothesis on the numbe
 
 From that example one can intuit that some solutions are more likely than others (i.e. solution C looks a bit off), also by using the data from the previous and next frame we may have more insight on the most probable solution. For that matter we used a graphical model to make use of all of the data available in order to solve the detection and tracking.
 
+_________________________________
+
 
 Graphical models for joint Segmentation and tracking 
 ====================================
@@ -79,46 +82,39 @@ from the previous example we can expect the graph to grow exponentially as the n
 
 Previous approach
 ====================================
-<!-- TODO -->
-By Virginie Uhlmann {% cite uhlmann2017landmark %}, based on splines, detect cell tips, generate all paths between cells. Issue is great amount of detection thus explosion of the graphs complexity.
+*BactImAS* {% cite mekterovic2014bactimas %} offers a semi-automated solution to the tracking problem where the user must manually define initial cells, division events, and maybe correct the model's prediction in between. To detect cells *BactImAS* relies on edge detection, thresholds and skeletonization. 
+In her PhD thesis {% cite uhlmann2017landmark %}, Virginie Uhlman introduces splines to further automate the process. From the detected cell tips a set of shortest viable path in between are generated as cell proposals. The issue of the exploding graph complexity remains because of the high number of proposals.
 
 <figure>
   <center>
     <img src="{{site.url}}/img/posts/tracking_cells/uhlmann-prev-appr.jpg" alt="Uhlmann previous approach" style="width:100%"/>
-    <figcaption>1 : identify cell tips with pixel classifier, 2 and 3 : model all possible tip to tip links as a shortest path relying on splines {% cite uhlmann2017landmark %}</figcaption>
+    <figcaption>V. Uhlmann's approach. 1 : identify cell tips with pixel classifier, 2 and 3 : model all possible tip to tip links as a shortest path relying on splines {% cite uhlmann2017landmark %}</figcaption>
     </center>
 </figure>
 
 _________________________________
 
 
-# Exploring candidates generation through deep learning
-<!-- TODO -->
-Leverage convolutional neural networks to generate cells candidates
+Exploring candidates generation through deep learning
+====================================
+
+The aim of my internship project is to explore the generation of cell candidates using deep learning methods. The idea being that a number of cell proposal could be ruled out by their improbable shape, thus adding a learning component (opposed to doing only image processing) to the process could improve the proposals.
+
 ## First approach : U-net for pixel class prediction
+
+Graphical models provide a way to solve for the tracking and segmentation problem simultaneously on the entire video. However, it relies on cell candidates generated for each frame. Since we want the true segmentation to be within the set of candidates, we perform **over-segmentation** (i.e. we segment too much) to ensure that we obtain more false positives that false negatives (for that we can rule out false positives with the graphical model).
+Deep neural networks can be used to generate such segmentation proposals in a robust and generalisable way.
+For instance, {% cite Falk2019 %} propose a deep learning method for detecting instances of cells in images relying on pixel-wise classification. For that matter we used a U-Net architecture.
+
 ### what is a U-net ?
-<!-- TODO -->
- {% cite RonnebergerFB15 %}
+**U-net** is a convolutional neural network first introduced by {% cite RonnebergerFB15 %} for biomedical image segmentation. It aims at providing fine pixel classification with low and high scale awareness of the neighboring pixels. The network is composed of a contracting path that decreases the image size through **convolution** and **pooling** while increasing the number of channels, and an expansive path that increases the image size through **convolution** and **up-sampling** while decreasing the number of channels. The output image scale  is therefore the same as the input. **Skip paths** are also added to link layers  within levels, so that the information capturing fine details can be forwarded to the end of the network without traversing the contracting path.
 
-per pixel classification, pixel prediciton is context aware (sees around) but prediction is detailed (ie output class map has same spatial definition as input)
-
-<!-- TODO -->
- conv
- pool (scale down)
- upconv (scale up)
- skip (transfer)
 <figure>
   <center>
     <img src="{{site.url}}/img/posts/tracking_cells/u-net-architecture.png" alt="Unet Architecture" style="width:100%"/>
-    <figcaption>Structure of a basic U-net {% cite RonnebergerFB15 %}</figcaption>
+    <figcaption>Structure of a basic U-net {% cite RonnebergerFB15 %}. The <b>skip paths</b> are shown in gray</figcaption>
     </center>
 </figure>
-
-<!-- TODO -->
-idea detect cells and separate different cell segments using the tips of the cells as delimiters. added core class and outer cell class to enforce separation between different instances of touching cells.
-
-however these are really not cells candidates but rather a bunch of cell segments
-
 
 
 ### Weighted soft-max cross-entropy loss
@@ -174,38 +170,118 @@ From output of the network we need to produce a set of cell candidates. We devis
     </center>
 </figure>
 
+### Results
+This pixel wise classification approach provided decent results, however the candidates generation part relies heavily on manually chosen hyper-parameters. Also this methods tends to generate quite a lot of very small cell proposals. These numerous false positive make the graphical model complexity explode. Any attempt at choosing a set of hyper-parameters to reduce the number of false positives dramatically increase the number of false negatives, meaning that the graphical model cannot be set up.
 
 _________________________________
 
 ## Instance segmentation with pixel embedding
 In the first approach the instance segmentation (differentiating one cells from its neighbor) is done by the proxy of per pixel classification. What if we could directly optimize for instance segmentation within the convolutional network and thus minimize the handcrafting of the cell proposal method.
 
-each pixel is attributed a N dimensional vector, so that every pixel from a same cell has a "similar" vector and pixels from different cells have "non-similar" vectors (the similarity measure may depend on the method used). If N=3 you can consider these vectors to be RGB colors, the objective being so that each cell is colored uniformly but different cells have different colors. Through the different figures we project our N dimensional vectors to a 3D space with a PCA so that we can display these vectors as colors. Using the first two dimensions of the PCA we can plot these pixels as points within this 2D space to better visualize the clustering.
+We thus focus on a framework in which the instance segmentation problem becomes a pixel clustering problem in a new feature space {%cite deBrabandere2017semantic %}. This approach allows predicting instance segmentation with no prior on the number of elements in the image. In constrast to other popular instance segmentation methods like Mask R-CNN {%cite he2017mask %}, it does not rely on region proposal followed by classification. Instead of doing pixel classification with a softmax loss, which would limit the number of instances, we can detect any number of instances in an image can be captured. 
+Indeed, when predicting instances as one class for each instance, the number of instances is limited by the size of the output vector, i.e. the number of classes.
+{%cite payer2018instance %} extend this idea by considering a tracking component to the problem, adding recurrent components in the network and using a new similarity measure in the feature space.
+
+In this framework each pixel is attributed a N dimensional vector, so that every pixel from a same cell has a "similar" vector and pixels from different cells have "non-similar" vectors (the similarity measure may depend on the method used). If N=3 you can consider these vectors to be RGB colors, the objective being so that each individual cell is colored uniformly, but different cells have different colors. Through the different figures we project our N dimensional vectors to a 3D space with a PCA so that we can display these vectors as colors. Using the first two dimensions of the PCA we can plot these pixels as points within this 2D space to better visualize the clustering.
 
 ### Semantic InstanceSegmentation with a Discriminative Loss Function
-{% cite deBrabandere2017semantic %}
+
+<figure>
+  <center>
+    <img src="{{site.url}}/img/posts/tracking_cells/SIS-DLF-1.jpg" style="width:100%"/>
+    <img src="{{site.url}}/img/posts/tracking_cells/SIS-DLF-2.jpg" style="width:100%"/>
+    <figcaption>Top left: the input image. Top right: pixel embeddings projected in a 2D space each car is a cluster. Bottom right: pixel embeddings interpreted as colors, each individual car is colored/projected differently. Bottom right: predicted instances after clustering of the pixel embeddings {% cite deBrabandere2017semantic %}</figcaption>
+    </center>
+</figure>
+
 #### discriminative loss
-#### clustering
+To learn the clustering, we rely on a discriminative loss composed of three key parts {% cite deBrabandere2017semantic %}. During learning we use as input the image along with ground truth instance labels.
 
---results--
+- **Variance term**: is an intra-cluster pull force moving embeddings toward the mean of each label cluster. A margin is set for the variance, which corresponds to the inner circle in the next figure. This margin defines how tightly packed clusters should be.
+- **Distance term**: an inter-cluster push force drawing the mean of embeddings of different instances further
+apart from each other. A margin is set for the distance, corresponding to the outer
+circle in the next figure. This margin defines how far from each other clusters should be.
+- **Regularization term**: it is a pull force drawing clusters closer to the origin of the embedding space to avoid values blowing up.
 
-### Customizing the loss for our purpose ?
-<!-- TODO -->
-ie cell division, to identify parenting
+These three part as summed as the loss function and minimized during the learning phase.
 
-## Using recurrent network to track cells trough time ?
-<!-- TODO -->
+<figure>
+  <center>
+    <img src="{{site.url}}/img/posts/tracking_cells/SIS-DLF-3.jpg" style="width:100%"/>
+    <figcaption> {% cite deBrabandere2017semantic %}</figcaption>
+    </center>
+</figure>
+
+### Clustering
+Since the loss directly defines the way our instances are clustered in the new feature space, this defines in advance many of the hyper-parameters we might have to decide on while clustering the pixels. For that matter, we used the agglomerative clustering available in sklearn
+{%cite scikit-learn %}. This method starts by initializing each pixel as a cluster. Clusters are
+then merged together in a tree-like manner. The merging stops when a distance threshold is met,
+that is when the distance between all clusters is more than the threshold. This is relatable to the
+design of the discriminative loss since it enforces a minimal distance between different instances. Also this method does not rely on a prior knowledge of the number of clusters.
+
+### Results
+
+Here is the results on a few sample frames. From the second more cluttered frame we observe that this method scales decently to a high number of cells. One improvement might be to add a filter on the smallest size a cluster can be to avoid 1 pixel clusters being proposed as cells.
+
+<figure>
+  <center>
+    <img src="{{site.url}}/img/posts/tracking_cells/clustering_18_35.png" style="width:100%"/>
+    <figcaption> Result on an early frame</figcaption>
+    </center>
+</figure>
+
+_________________________________________
+
+<figure>
+  <center>
+    <img src="{{site.url}}/img/posts/tracking_cells/clustering_18_120.png" style="width:100%"/>
+    <figcaption> Result on a more cluttered frame</figcaption>
+    </center>
+</figure>
+
+
+## Other approaches and perspectives
+We tried implementing a Cosine embedding loss {%cite payer2018instance %} as a replacement for the discriminative loss function. This yielded similar results but is not as straightforward to cluster as instead of using any N dimensional vector, the pixels are embedded in a N dimensional sphere. Meaning that the similarity function for clustering is not longer a simple euclidean distance but rather a cosine similarity. Also {%cite payer2018instance %} proposes to compute the loss over several frame and ensure that cells have a consistent embedding cluster through time, thus learning the **tracking** part along the **instance segmentation** part. Due to time constraints I did not manage to properly test this promising method.
+
+Another idea would be to expand this embedding time consistency to cell divisions, for instance we could devise a loss so that, once projected in a set of specified dimension parent cells would be similar, but remains separate in the other dimensions. If functioning properly this method would negate the need of the graphical model as it solves for **tracking**, **instance segmentation** and **cell divisions** at once.
 
 Conclusion
 ====================================
+From the different convolutional network methods I used I managed to produce strong sets of cell proposals. However due to time constraints and technical limitation of the graphical model, I did not manage to properly use these cell proposals to train the latter. Meanwhile this project gave me a great insight on the functioning and building on convolutional networks.
 
-<!-- TODO -->
+Throughout this project, the graphical model was a motivation for our model design choices. A U-net architecture provides an instance segmentation that is not satisfactory as it has extensive post-processing that is specific to the dataset. As we aim for generalizable solution we also explored instance segmentation oriented networks and losses (e.g. discriminative or cosine embedding loss). These offer a more straightforward optimization process to obtain cell candidates for the graphical model. Moreover, the clustering process offers better control on the roughness or finesse of the segmentation candidates.
+
+Unfortunately, the ground truth matching part which is necessary to train the graphical model, proved to be a roadblock when using our first instance predictions obtained using U-net on a pixel classification task. We sadly did not have time to test ground piping our discriminative network results into the graphical model.
+
+
 
 ## Acknowledgments
 To the French Embassy in London for funding this internship, to EMBL for making it
 possible, to José for his technical help,
 And mostly, warm and sincere thanks to the whole Uhlmann Lab : Virginie, Soham, Yoann,
 Johannes, James and Maria.
+
+
+
+## Bonus: Making some abstract "art" with it
+
+<figure>
+  <center>
+  <img src="{{site.url}}/img/cells.png" style="width:100%"/>
+  </center>
+</figure>
+
+As i noticed the discriminative network trained on the discriminative loss function outputted some pretty colors I tried to feed it a synthetic image over-packed with cells. This is the results, it make for a great (but maybe too colorful) wallpaper.
+<figure>
+  <center>
+    <img src="{{site.url}}/img/posts/tracking_cells/super_spagettos.png" style="width:100%"/>
+    <figcaption> Left: Input spaghettis. Right: output colors</figcaption>
+    </center>
+</figure>
+
+
+
+
 
 
 References
