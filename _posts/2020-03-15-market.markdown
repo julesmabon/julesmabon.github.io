@@ -17,11 +17,9 @@ Here is what the filming looked like.
 
 The rest of the scene was built with [Blender](https://www.blender.org). The people filmed were keyed from the green screen and the added as simple 2D planes into the 3D scene. The yellow triangle markers added to the green cloth "for better tracking" ended up being quite a pain to remove digitally.
 
-<figure>
-  <center>
-    <img src="{{site.url}}/img/crea/market/spin_1.gif" style="width:100%"/>
-    </center>
-</figure>
+
+<iframe width="560" height="560" src="https://cdn-animation.artstation.com/p/video_sources/000/024/393/spin.mp4"></iframe>
+
 
 The center vehicle/market was made before shooting but since I did not really plan the camera point of view for the shooting, the background was added after. I believe a key component to make the actor blend into the 3d scene was to match the lighting after filming (i.e. adding a big bright neon on the right side that was never meant to be there). Notice how there is no stabilization on this hand held phone shot ... this is quite bad.
 
@@ -29,7 +27,7 @@ As a whole this was a lesson on planning before filming.
 
 <figure>
   <center>
-    <img src="{{site.url}}/img/crea/market/bts-1.png" style="width:100%"/>
+    <img src="https://cdna.artstation.com/p/assets/images/images/025/004/280/medium/jules-mabon-viewport-1.jpg?1584270788" style="width:100%"/>
     <figcaption>Literally "behind" the scene</figcaption>
     </center>
 </figure>
@@ -38,7 +36,7 @@ As a whole this was a lesson on planning before filming.
 
 <figure>
   <center>
-    <img src="{{site.url}}/img/crea/market/cat.png" style="width:100%"/>
+    <img src="https://cdnb.artstation.com/p/assets/images/images/030/131/305/medium/jules-mabon-cat.jpg?1599691096" style="width:100%"/>
     <figcaption>The early testing stages involved filming my cat in front of a blue cloth to test the camera tracking</figcaption>
     </center>
 </figure>
