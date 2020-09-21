@@ -5,4 +5,4 @@ categories: research
 date:   2020-09-02 14:32:11 +0200
 ---
 
-This website is a work in progress, some content might be added in the near future. In the mean time please stare silently into the void of this page.
+Welcome to my new website. It is quite empty for now, some content might be added in the near future. In the mean time please stare silently into the void of this page.
