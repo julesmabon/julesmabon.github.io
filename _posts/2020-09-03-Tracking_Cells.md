@@ -32,13 +32,8 @@ We were working on time lapse images of _Mycobacteria smegmatis_ that is a non p
 
 
 ## The data
-The data provided by Prof. John McKinney's Laboratory of Microbiology and Microtechnology (LMIC, EPFL, Lausanne, Switzerland), consists of 9 videos of 170 frames each.
-Each video shows the growth of an M. smegmatis from one or two cells. 
-Each frame is composed of two channels: 
-one **phase channel** corresponding to the phase shift of the light entering the microscope,
-and one **fluorescence channel** reporting the protein Wag31, present in the tips of the cells, which has been fused to a fluorescent dye. 
-We are, in addition,provided with a set of annotation on the first 130 images on each videos. 
-These annotations correspond to the skeleton (i.e., medial axis) of each cell.
+The data (courtesy of LMIC, EPFL, Lausanne, Switzerland) consist of several time-lapse microscopy videos showing the growth of M. smegmatis colonies. Images are composed of a phase contrast and a fluorescence channel reporting cellular division. In approximately the first 3/4 of the frames of each videos, the medial axis of the bacterias have been annotated with a [custom software](http://bigwww.epfl.ch/teaching/projects/abstracts/mariani/).
+
 
 ## Ambiguity in single frame segmentation
 The main issue with this data is that the detection relies mainly on the temporal data since on a given frame it is not obvious to the human eye where the boundaries of the cells are since cells are often cluttered.
