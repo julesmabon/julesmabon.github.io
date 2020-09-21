@@ -273,7 +273,7 @@ _________________________________________
   </center>
 </figure>
 
-As i noticed the network trained on the discriminative loss function outputted some pretty colors I tried to feed it a synthetic image over-packed with cells. This is the results, it make for a great (but maybe too colorful) wallpaper.
+As i noticed the network trained on the discriminative loss function outputted some pretty colors I tried to feed it a synthetic image over-packed with cells. This is the result, it makes for a great (but maybe too colorful) wallpaper.
 <figure>
   <center>
     <img src="{{site.url}}/img/posts/tracking_cells/super_spagettos.png" style="width:100%"/>
