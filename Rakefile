@@ -8,7 +8,7 @@ require "jekyll"
 
 
 # Change your GitHub reponame
-GITHUB_REPONAME = "julesmabon/julesmabon.github.com"
+GITHUB_REPONAME = "julesmabon/julesmabon.github.io"
 
 
 desc "Generate blog files"
@@ -31,7 +31,7 @@ task :publish => [:generate] do
     system "git init"
     system "git add ."
     message = "Site updated at #{Time.now.utc}"
-    system "git commit -m #{message.inspect}"
+    system "git commit -m '#{message.inspect}'"
     system "git remote add origin git@github.com:#{GITHUB_REPONAME}.git"
     system "git push origin master --force"
 
