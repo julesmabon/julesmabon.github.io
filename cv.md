@@ -5,7 +5,7 @@ background: '/img/verdon.jpg'
 ---
 
 
-### 2020-2022
+### 2020-2023
 #### PhD at INRIA Sophia-Antipolis, France
 Under the direction of Josiane Zerubia, [AYANA team](https://team.inria.fr/ayana/), in partnership with Airbus Defense and Space. On Stochastic Geometry for Multiple Object Detection and Tracking in High Resolution Multi-Source Data Sets
 
