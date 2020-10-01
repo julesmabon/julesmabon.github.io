@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Mycobacteria tracking on time-lapse imaging"
-subtitle: "My internship at EMBL-EBI with Virginie Uhlmann's group"
+subtitle: "My internship at EMBL-EBI in Cambridge with Virginie Uhlmann's group"
 background: '/img/cells.png'
 date:   2020-09-21 14:00:00 +0200
 categories : research
