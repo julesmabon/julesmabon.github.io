@@ -2,7 +2,7 @@
 layout: post
 title:  "Stochastic Geometry for Multiple Object Detection and Tracking in High Resolution Multi-Source Data Sets"
 subtitle: "My PhD at INRIA / AYANA team with Josiane Zerubia. In parternship with Airbus DS "
-background: ''
+background: /img/sentinel_2.jpg
 date:   2020-10-02 19:00:00 +0200
 categories : research
 published: true
@@ -32,3 +32,5 @@ The data and some ground truth will be provided by **Airbus Defense and Space** 
 #### References
 
 {% bibliography --cited%}
+
+background image from : ESA / Copernicus Sentinel-2A - http://www.esa.int/spaceinimages/Images/2017/04/Central-eastern_Brazil
