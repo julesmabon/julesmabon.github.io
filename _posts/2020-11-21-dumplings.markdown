@@ -101,7 +101,7 @@ frameborder="0" allowfullscreen class="video"></iframe>
 <style>.embed-container { position: relative; padding-bottom: 56.25%%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='https://cdn-animation.artstation.com/p/video_sources/000/188/402/josette-scan.mp4' frameborder='0' allowfullscreen></iframe></div>
 
 
-Ands then I spent months building and texturing the rest of the scene on Blender. There is not much to say about that without getting into too much details and I am tired and lazy.
+And then I spent months building and texturing the rest of the scene on Blender. There is not much to say about that without getting into too much details and I am tired and lazy.
 
 ## The things we hoped we knew
 A bunch of things
