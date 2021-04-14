@@ -6,7 +6,7 @@ background: '/img/kaleidoscop.PNG'
 
 Contact
 ====================
-You can contact me via twitter DMs, pigeons or this crude form:
+You can contact me via yelling through your window, carving marble slates sent over courrier, spamming twitter DMs, whispering to pigeons or by filling this crude form that will forward your words to my email inbox:
 
 
 <div id="contact">
