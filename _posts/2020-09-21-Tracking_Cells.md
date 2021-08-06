@@ -11,7 +11,7 @@ hidden: false
 
 During summer 2019 I had the pleasure to do an internship with [Virginie Uhlmann 's team](https://www.ebi.ac.uk/research/uhlmann) at the [European Bioinformatics Institute (EBI)](https://www.ebi.ac.uk) . The team aims at developing tools that blend mathematical models and image processing algorithms to quantitatively characterize the content of bioimages.
 
-In this post I will discuss the methods used during the course of this internship on *multiple cell tracking in time lapse microscopy images*. Most of the methods described in this post were adapted from the cited publications to our case and implemented by me in **Python** and **Tensorflow**. 
+In this post I will discuss the methods used during the course of this internship on *multiple cell tracking in time lapse microscopy images*. Most of the methods described in this post were adapted from the cited publications to our case and implemented by me in **Python** and **Tensorflow**.
 
 Goal
 ====================================
@@ -50,11 +50,11 @@ From that example one can intuit that some solutions are more likely than others
 _________________________________
 
 
-Graphical models for joint Segmentation and tracking 
+Graphical models for joint Segmentation and tracking
 ====================================
 
 
-Schiegg et al. propose a model based on factor graphs to represent the multiple detection hypothesis and jointly tracking and segmenting on whole videos at once {% cite schiegg2014graphical %}. To put it in a nutshell, given that we provide a set of **detection candidates** and **transition candidates** , along with **associated probabilities** , this method uses a graph representation to compute the most likely candidates for detections and transitions within some **constraints** . 
+Schiegg et al. propose a model based on factor graphs to represent the multiple detection hypothesis and jointly tracking and segmenting on whole videos at once {% cite schiegg2014graphical %}. To put it in a nutshell, given that we provide a set of **detection candidates** and **transition candidates** , along with **associated probabilities** , this method uses a graph representation to compute the most likely candidates for detections and transitions within some **constraints** .
 
 * **detection candidates** are potential cells (for instance the region labeled 1 in the figure, or the union of 2 and 3 labeled 23)
 * **transition candidates** represent how these candidates would transition from one frame to the next. Here one could expect 12 (at frame t)to transition into 4 (at frame t+1)
@@ -78,7 +78,7 @@ From the previous example we can expect the graph to grow exponentially as the n
 
 Previous approach
 ====================================
-*BactImAS* {% cite mekterovic2014bactimas %} offers a semi-automated solution to the tracking problem where the user must manually define initial cells, division events, and maybe correct the model's prediction in between. To detect cells *BactImAS* relies on edge detection, thresholds and skeletonization. 
+*BactImAS* {% cite mekterovic2014bactimas %} offers a semi-automated solution to the tracking problem where the user must manually define initial cells, division events, and maybe correct the model's prediction in between. To detect cells *BactImAS* relies on edge detection, thresholds and skeletonization.
 In her PhD thesis {% cite uhlmann2017landmark %}, Virginie Uhlman introduces splines to further automate the process. From the detected cell tips a set of shortest viable path in between are generated as cell proposals. The issue of the exploding graph complexity remains because of the high number of proposals.
 
 <figure>
@@ -118,7 +118,7 @@ For instance, {% cite Falk2019 %} propose a deep learning method for detecting i
 We use a Cross entropy loss with soft-max as it is commonly used for classification {% cite Bishop:2006:PRM:1162264 %} and can be written as
 
 $$
-l(I) := - \sum_{x\in I}w(x) \log 
+l(I) := - \sum_{x\in I}w(x) \log
 \frac{
 \exp \left(    \hat{y}_{y(x)}(x)  \right)
 }{
@@ -174,7 +174,7 @@ _________________________________
 ## Instance segmentation with pixel embedding
 In the first approach the instance segmentation (differentiating one cells from its neighbor) is done by the proxy of **per pixel classification**. What if we could directly optimize for **instance segmentation** within the convolutional network and thus minimize the handcrafting of the cell proposal method ?
 
-We thus focus on a framework in which the instance segmentation problem becomes a **pixel clustering problem** in a new feature space {%cite deBrabandere2017semantic %}. This approach allows predicting instance segmentation with no prior on the number of elements in the image. In constrast to other popular instance segmentation methods like Mask R-CNN {%cite he2017mask %}, it does not rely on region proposal followed by classification. Instead of doing pixel classification with a softmax loss, which would limit the number of instances, we can detect any number of instances in an image can be captured. 
+We thus focus on a framework in which the instance segmentation problem becomes a **pixel clustering problem** in a new feature space {%cite deBrabandere2017semantic %}. This approach allows predicting instance segmentation with no prior on the number of elements in the image. In constrast to other popular instance segmentation methods like Mask R-CNN {%cite he2017mask %}, it does not rely on region proposal followed by classification. Instead of doing pixel classification with a softmax loss, which would limit the number of instances, we can detect any number of instances in an image can be captured.
 Indeed, when predicting instances as one class for each instance, the number of instances is limited by the size of the output vector, i.e. the number of classes. Also
 {%cite payer2018instance %} extend this idea by considering a tracking component to the problem, adding recurrent components in the network and using a new similarity measure in the feature space.
 
@@ -290,4 +290,4 @@ References
 ====================
 
 
-{% bibliography --cited%}
+{% bibliography --cited %}
