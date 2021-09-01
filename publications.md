@@ -4,17 +4,40 @@ layout: page
 background: '/img/panel.jpg'
 ---
 
-<!-- There is nothing to see here for now. -->
-
-<!-- [HAL]https://haltools.archives-ouvertes.fr/Public/afficheRequetePubli.php?auteur_exp=Jules+Mabon&CB_auteur=oui&CB_titre=oui&CB_article=oui&CB_vignette=oui&langue=Anglais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&Fen=Aff&css=../css/VisuRubriqueEncadre.css[/HAL]
+<!-- ## Conference papers
 
 
-[HAL]http://haltools.inria.fr/Public/afficheRequetePubli.php?labos_exp=AYANA&CB_ref_biblio=oui&langue=Anglais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&Fen=Aff&css=../css/VisuRubriqueEncadre.css[/HAL] -->
+{% bibliography --file mypublis %} -->
 
 
-<dl class="NoticeRes">
-<!-- <dt class="ChampRes">ref_biblio</dt> -->
-<dd class="ValeurRes ref_biblio">Jules Mabon, Mathias Ortner, Josiane Zerubia. Processus ponctuels et réseaux de neurones convolutifs pour la détection de véhicules dans des images de télédétection. <i>ORASIS 2021 – 18èmes Journées francophones des jeunes chercheurs en vision par ordinateur</i>, Institut de Recherche en Informatique de Toulouse (IRIT); Institut national polytechnique de Toulouse (INP), Sep 2021, Saint-Ferréol, France. <a target="_blank" href="https://hal.inria.fr/hal-03299461">⟨hal-03299461⟩</a></dd>
-<!-- <dt class="ChampRes">Accès au texte intégral et bibtex</dt> -->
-<dd class="ValeurRes Fichier_joint"> <a href="https://hal.inria.fr/hal-03299461/file/Jules_Mabon_ORASIS2021_final.pdf" target="_blank"> <img alt="https://hal.inria.fr/hal-03299461/file/Jules_Mabon_ORASIS2021_final.pdf" src="https://haltools.inria.fr/images/Haltools_pdf.png" title="https://hal.inria.fr/hal-03299461/file/Jules_Mabon_ORASIS2021_final.pdf" border="0"></a> <span class="LienBibtexACoteFulltext"><a href="https://hal.inria.fr/hal-03299461/bibtex" target="_self"> <img alt="BibTex" src="https://haltools.inria.fr/images/Haltools_bibtex3.png" title="BibTex" border="0"></a> </span></dd>
-</dl>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8">
+<meta http-equiv="Content-Language" content="fr">
+<link rel="stylesheet" type="text/css" href="../halcss/VisuGen.css">
+<link rel="stylesheet" type="text/css" href="../halcss/VisuRubriqueEncadre.css">
+<!-- Piwik haltools.inria.fr-->
+<script type="text/javascript" async="" defer="" src="//piwik.inria.fr/piwik.js"></script><script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.inria.fr/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 25]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//piwik.inria.fr/piwik.php?idsite=25" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+<title>Publications HAL de  Jules Mabon</title>
+<body>
+
+{% remote_content https://haltools.inria.fr/Public/afficheRequetePubli.php?auteur_exp=Jules+Mabon&CB_auteur=oui&CB_titre=oui&CB_article=oui&langue=Anglais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&Fen=Aff&css=../css/VisuRubriqueEncadre.css %}
+
+
+</body>
+</html>
