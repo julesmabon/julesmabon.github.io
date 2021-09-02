@@ -34,10 +34,10 @@ background: '/img/panel.jpg'
 <!-- End Piwik Code -->
 
 <title>Publications HAL de  Jules Mabon</title>
-<body>
+<p style="font-size: 12px">
 
 {% remote_content https://haltools.inria.fr/Public/afficheRequetePubli.php?auteur_exp=Jules+Mabon&CB_auteur=oui&CB_titre=oui&CB_article=oui&langue=Anglais&tri_exp=annee_publi&tri_exp2=typdoc&tri_exp3=date_publi&ordre_aff=TA&Fen=Aff&css=../css/VisuRubriqueEncadre.css %}
 
 
-</body>
+</p>
 </html>

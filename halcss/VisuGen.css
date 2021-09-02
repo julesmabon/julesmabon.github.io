@@ -1,8 +1,8 @@
 
 HTML, BODY, A, TABLE, TR, TD, FORM, INPUT, SELECT, TEXTAREA, DIV, P, SPAN, H1, H2, H3, H4, H5, B, UL, LI, DD, DL, DT {
 
-	font-family: sans-serif, Times, "Times New Roman";
-
+	/* font-family: sans-serif, Times, "Times New Roman"; */
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 BODY {
@@ -11,7 +11,7 @@ BODY {
 	padding: 0px;
 	background-color: #ffffff;
 	color: black;
-	font-size: 12px;
+	/* font-size: 12px; */
 }
 
 /* classe css de la page*/
@@ -122,18 +122,18 @@ width: 15%;
 
 /* Classe commune à  tous les champs affichés */
 .ValeurRes {
-	margin-left:25%;
+	/* margin-left:25%; */
 	margin-bottom: 0em;
 	margin-top: 0em;
 	padding: 0em;
 	text-align:left;
-	font-size: 0.9em;
-	font-size: 1em;
+	font-size: 0.7em;
+
 }
 .ValeurRes a{
 	color:black;
 	/* text-decoration:underline; */
-	font-size: 1.2em;
+	font-size: 1.0em;
 }
 /* quand il y a affichage de vignette */
 .ValeurResAvecVignette {

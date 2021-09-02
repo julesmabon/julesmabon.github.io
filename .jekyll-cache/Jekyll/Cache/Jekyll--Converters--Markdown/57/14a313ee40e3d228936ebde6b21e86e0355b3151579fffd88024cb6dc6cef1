@@ -1,4 +1,4 @@
-I"�<!-- ## Conference papers
+I"�<!-- ## Conference papers
 
 
 <ol class="bibliography"><li><span id="mabon:hal-03299461">Mabon, J., Ortner, M., &amp; Zerubia, J. (2021, September). Processus ponctuels et réseaux de neurones convolutifs pour la détection de véhicules dans des images de télédétection. <i>ORASIS 2021 - 18èmes Journées Francophones Des Jeunes Chercheurs En Vision Par Ordinateur</i>. https://hal.inria.fr/hal-03299461</span></li></ol> -->
@@ -27,7 +27,7 @@
 <!-- End Piwik Code -->
 
 <title>Publications HAL de  Jules Mabon</title>
-<body>
+<p style="font-size: 12px">
 
 <div id="res_script">
 <p class="Rubrique">2021</p>
@@ -52,6 +52,6 @@
 </div>
 
 
-</body>
+</p>
 </html>
 :ET
