@@ -1,7 +1,7 @@
 ---
 title: Resume
 layout: page
-background: '/img/verdon.jpg'
+background: '/img/forest.jpg'
 ---
 
 
@@ -18,13 +18,13 @@ Final year intership in [Virginie Uhlmann’s research group](https://www.ebi.ac
 _______________________________
 ### 2016-2019
 #### Master’s degree in Engineering at [Ecole Centrale de Lille](https://centralelille.fr)
-Multidisciplinary engineering school, France 
+Multidisciplinary engineering school, France
 Common core : Aero/Hydrodynamics, Thermodynamics, Signal processing, Project management, Materials science etc...
 
 Specialization : [Option DAD (Decision & Data Analysis)](http://pierrechainais.ec-lille.fr/Centrale/Option_DAD/Accueil.html) : Probability and statistics, optimization, machine learning ...
 
 _______________________________
-### 2018-2019 
+### 2018-2019
 #### Applied Mathematics at Université de Lille
 Courses on Functional analysis, Stochastic process, Itô integrals, Statistical physics
 
@@ -36,7 +36,7 @@ Research, development and documentation on a product recognition system for a �
 
 _______________________________
 
-### 2018 
+### 2018
 #### Research project : in computer science with [CRIsTAL](https://www.cristal.univ-lille.fr)
 Initiation at research work on the subject of matrix factorization for recommendation systems. Study of research publications and implementation of machine learning and optimization algorithms to produce such recommendation systems such as used with Netflix or Spotify.
 
