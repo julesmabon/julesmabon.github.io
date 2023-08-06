@@ -1,4 +1,4 @@
-title:              Jules Mabon
+title:              J. Mabon
 email:
 description:        Homepage of Jules Mabon
 author:             Jules Mabon
@@ -30,6 +30,7 @@ plugins:
 paginate:           5
 paginate_path:      "/posts/page:num/"
 
+repository: julesmabon/julesmabon.github.io
 
 scholar:
   style: apa
