@@ -7,8 +7,10 @@ background: '/img/forest.jpg'
 
 ### 2020-2023
 #### PhD at INRIA Sophia-Antipolis, France
-Under the direction of Josiane Zerubia, [AYANA team](https://team.inria.fr/ayana/), in partnership with Mahtias Ortner from Airbus Defense and Space. On Stochastic Geometry for Multiple Object Detection and Tracking in High Resolution Multi-Source Data Sets
-Secretary of the [ADSTIC](https://adstic.i3s.univ-cotedazur.fr/) (_Association Doctorale du Campus STIC_).
+Under the direction of Josiane Zerubia, [AYANA team](https://team.inria.fr/ayana/), in partnership with Mahtias Ortner from Airbus Defense and Space: _Learning Stochastic geometry models and convolutional neural networks. Application to multiple object detection in high resolution data sets._
+
+Organizing member (2021-2022) and Secretary (2022-2023) of the [ADSTIC](https://adstic.i3s.univ-cotedazur.fr/) (_Association Doctorale du Campus STIC_).
+
 _______________________________
 
 ### 2019 (6 months)
