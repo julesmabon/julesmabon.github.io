@@ -4,8 +4,8 @@ title:  "Works in progress"
 date:   2023-09-04 09:00:00 +0100
 categories : creative
 subtitle: "Things that are being made but never done"
-thumbnail: https://lh3.googleusercontent.com/pw/ADCreHcq-jKfRcyKghqvZNeICSdMvBZziiqv4PiYSG7TGozlNq7yeG_i7MMS1KTNQRHssubOcvTbvBEVqccZKI7L7yBm2uM_VHjGLQSvxWP6GRhUD1R2tZIQkN97a371Tt_phRY5sTY_voxhdZwispQH_NNEJA=w1920-h1080-s-no
-background: https://lh3.googleusercontent.com/pw/ADCreHcq-jKfRcyKghqvZNeICSdMvBZziiqv4PiYSG7TGozlNq7yeG_i7MMS1KTNQRHssubOcvTbvBEVqccZKI7L7yBm2uM_VHjGLQSvxWP6GRhUD1R2tZIQkN97a371Tt_phRY5sTY_voxhdZwispQH_NNEJA=w1920-h1080-s-no
+thumbnail: https://lh3.googleusercontent.com/pw/ADCreHcpYcqBZWX9pI-9foJVzCaKqqMHNRhGHUAhLjiCbmayfAN6hhcXXpS7wYP0R-YmfxPwguG0D2kDzDRDN7hSjaP4-3_XexEvl5KGkyOq-J-cVLaOjsP8VRtcnlwTuwOAb7gk8plLelq1VX9_PAaIrCYF_g=w1920-h1080-s-no
+background: https://lh3.googleusercontent.com/pw/ADCreHfGbrWUHIM73Nr68wM2MWo7ahIhpxJqVFTXBJKv_5_s3EZ5gLVR_AGvSWjXQA5oy8p6yHXMq4G6iJCD_aL9pM7NbnidcF005JybdNCZjk36hByM0PBrvHLSOiFaamWw4fviywnwDGYroZHK1nF-vMG9QA=w2200-h863-s-no
 hidden : false
 ---
 
