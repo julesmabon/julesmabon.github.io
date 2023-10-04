@@ -15,7 +15,7 @@ These images are made on the computer with Blender.
 <figure>
   <center>
     <img src="https://lh3.googleusercontent.com/pw/ADCreHfBXMZHUBb0PbUzQJmR75Exw95JjuE_0VHE01PpOUKLAnjU_Bb8V5zZd9emhWQjfDd12aVW25nPOga1AVYOTf2hqzpwaQF7Dc0OEEeyAXCbMNlRHHBpy316SSX5jEsXsCjobeDccWDNmT0XR7cZScllQw=w2200-h863-s-no" style="width:100%">
-    <figcaption>Sometime you your drive your tracteur jaune, Sep 2021</figcaption>
+    <figcaption>Sometime be like driving your tracteur jaune, Sep 2021</figcaption>
     </center>
 </figure>
 
