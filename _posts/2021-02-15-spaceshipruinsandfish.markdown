@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Spaceship Ruins, Fishes and stuff"
+title:  "Spaceship, Ruins, Fishes and stuff"
 date:   2021-02-15 09:00:00 +0100
 categories : creative
 subtitle: "Another blender short animation"
