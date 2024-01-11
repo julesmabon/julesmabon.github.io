@@ -9,7 +9,8 @@ background: '/img/forest.jpg'
 #### PhD at [INRIA Sophia-Antipolis](https://www.inria.fr/en/inria-centre-universite-cote-azur), France
 Under the direction of Josiane Zerubia, [AYANA team](https://team.inria.fr/ayana/), in partnership with Mahtias Ortner from Airbus Defense and Space: _Learning Stochastic geometry models and convolutional neural networks. Application to multiple object detection in high resolution data sets._
 
-Organizing member (2021-2022) and Secretary (2022-2023) of the [ADSTIC](https://adstic.i3s.univ-cotedazur.fr/) (_Association Doctorale du Campus STIC_).
+- Organizing member (2021-2022) and Secretary (2022-2023) of the [ADSTIC](https://adstic.i3s.univ-cotedazur.fr/) (_Association Doctorale du Campus STIC_).
+- Update and maintenance of the team website, edition of the yearly team report.
 
 _______________________________
 
@@ -21,9 +22,8 @@ _______________________________
 ### 2016-2019
 #### Master’s degree in Engineering at [Ecole Centrale de Lille](https://centralelille.fr)
 Multidisciplinary engineering school, France
-Common core : Aero/Hydrodynamics, Thermodynamics, Signal processing, Project management, Materials science etc...
-
-Specialization : [Option DAD (Decision & Data Analysis)](http://pierrechainais.ec-lille.fr/Centrale/Option_DAD/Accueil.html) : Probability and statistics, optimization, machine learning ...
+- Common core : Aero/Hydrodynamics, Thermodynamics, Signal processing, Project management, Materials science etc...
+- Specialization : [Option DAD (Decision and Data Analysis)](http://pierrechainais.ec-lille.fr/Centrale/Option_DAD/Accueil.html) : Probability and statistics, optimization, machine learning ...
 
 _______________________________
 ### 2018-2019
@@ -66,8 +66,6 @@ _______________________________
 
 
 _______________________________
-
-
 
 
 
